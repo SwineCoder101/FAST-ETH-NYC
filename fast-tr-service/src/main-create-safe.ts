@@ -4,13 +4,14 @@ import { EthersAdapter } from '@safe-global/protocol-kit'
 import { SafeFactory } from '@safe-global/protocol-kit'
 import { SafeAccountConfig } from '@safe-global/protocol-kit'
 import dotenv from 'dotenv'
+import { Config } from './config'
 
 dotenv.config()
 
 const txServiceUrl = 'https://safe-transaction-goerli.safe.global'
 
 // https://chainlist.org/?search=goerli&testnets=true
-const RPC_URL= process.env.RPC_ALCHEMY_URL || 'https://eth-goerli.public.blastapi.io'
+const RPC_URL= Config.rpcUrl || 'https://eth-goerli.public.blastapi.io'
 const provider = new ethers.providers.JsonRpcProvider(RPC_URL)
 
 
