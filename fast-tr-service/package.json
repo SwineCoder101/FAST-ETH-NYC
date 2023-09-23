@@ -5,6 +5,7 @@
   "types": "dist/main.d.ts",
   "scripts": {
     "start": "node dist/main.js",
+    "start:create:safe": "node dist/main-create-safe.js",
     "start:dev": "nodemon --ext js,ts,json,env --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/main.ts",
     "prepare": "husky install",
     "build": "tsc --project tsconfig.build.json",
