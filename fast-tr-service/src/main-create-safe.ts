@@ -4,14 +4,20 @@ import { EthersAdapter } from '@safe-global/protocol-kit'
 import { SafeFactory } from '@safe-global/protocol-kit'
 import { SafeAccountConfig } from '@safe-global/protocol-kit'
 import dotenv from 'dotenv'
-import { Config } from './config'
+import { Config } from './config.js';
+
+
+// your Safe address: 0xE0438Ec42A8dc719B5dd12290793bD7E85510824
+
+async function main (){
+
 
 dotenv.config()
 
 const txServiceUrl = 'https://safe-transaction-goerli.safe.global'
 
 // https://chainlist.org/?search=goerli&testnets=true
-const RPC_URL= Config.rpcUrl || 'https://eth-goerli.public.blastapi.io'
+const RPC_URL= 'https://eth-goerli.g.alchemy.com/v2/OwAquhwuVt8yeWAqv6tbR6M_8KeU2yF1'
 const provider = new ethers.providers.JsonRpcProvider(RPC_URL)
 
 
@@ -41,12 +47,21 @@ const safeAccountConfig: SafeAccountConfig = {
   // ... (Optional params)
 }
 
+const saltNonce = '123456'
+
+const predictedSafeAddress = await safeFactory.predictSafeAddress(safeAccountConfig, saltNonce)
+
+console.log('predictedSafeAddress: ', predictedSafeAddress)
+
 /* This Safe is tied to owner 1 because the factory was initialized with
 an adapter that had owner 1 as the signer. */
-const safeSdkOwner1 = await safeFactory.deploySafe({ safeAccountConfig })
+const safeSdkOwner1 = await safeFactory.deploySafe({ safeAccountConfig, saltNonce })
 
 const safeAddress = await safeSdkOwner1.getAddress()
 
 console.log('Your Safe has been deployed:')
 console.log(`https://goerli.etherscan.io/address/${safeAddress}`)
 console.log(`https://app.safe.global/gor:${safeAddress}`)
+
+}
+main();
