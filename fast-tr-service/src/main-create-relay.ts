@@ -5,6 +5,8 @@ import { MetaTransactionData, OperationType } from '@safe-global/safe-core-sdk-t
 import { ethers } from 'ethers'
 import { Config } from './config.js';
 
+
+
 // @ts-ignore
 const Safe = SafeProtocol.default
 

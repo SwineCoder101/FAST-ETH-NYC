@@ -47,7 +47,7 @@ const safeAccountConfig: SafeAccountConfig = {
   // ... (Optional params)
 }
 
-const saltNonce = '123456'
+const saltNonce: string =  new Date().getTime().toString();
 
 const predictedSafeAddress = await safeFactory.predictSafeAddress(safeAccountConfig, saltNonce)
 
@@ -64,4 +64,5 @@ console.log(`https://goerli.etherscan.io/address/${safeAddress}`)
 console.log(`https://app.safe.global/gor:${safeAddress}`)
 
 }
+
 main();
