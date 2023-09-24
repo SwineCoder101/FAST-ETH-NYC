@@ -9,15 +9,19 @@ router.get('/', (req: Request, res: Response) => {
 });
 
 // POST /fast/wallet/{Identifier_hash}
-router.post('/wallet', async (req: Request, res: Response) => {
-    try{
-        await createWallet();
-        res.status(201).send('Wallet created');
-    }catch(e){
+router.get('/wallet', async (req: Request, res: Response) => {
+    try {
+        const address = await createWallet();
+        console.log('address---------->', address);
+        
+        // Get the server's IP and port
+        res.status(201).send({
+            address
+        });
+    } catch(e) {
         console.log(e);
         res.status(500).send('Wallet creation failed');
     }
-
 });
 
 // GET /fast/wallet/{address}

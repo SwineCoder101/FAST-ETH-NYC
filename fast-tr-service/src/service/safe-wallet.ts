@@ -8,7 +8,9 @@ import { Config } from '../config.js';
 
 // your Safe address: 0xE0438Ec42A8dc719B5dd12290793bD7E85510824
 
-export async function createWallet (){
+
+
+export async function createWallet () : Promise<string>{
 
 
 dotenv.config()
@@ -62,4 +64,5 @@ console.log('Your Safe has been deployed:')
 console.log(`https://goerli.etherscan.io/address/${safeAddress}`)
 console.log(`https://app.safe.global/gor:${safeAddress}`)
 
+return safeAddress || '0x0' as string;
 }
