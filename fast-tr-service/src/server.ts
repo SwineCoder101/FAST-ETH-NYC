@@ -1,5 +1,5 @@
 import express from 'express';
-import { walletRouter } from './routes/wallet';
+import { walletRouter } from './routes/wallet.js';
 
 const app = express();
 const PORT = 3000;
@@ -13,3 +13,5 @@ app.use('/fast', walletRouter);
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+app.use(walletRouter);
