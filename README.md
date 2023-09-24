@@ -20,4 +20,25 @@ Our hypothesis is that AI will enable super high distribution of web3 in the fol
 People will have an easier chat interface vs. hard to understand UX
 AI will enable better ways to link people to their addresses and bring greater adoption into the Web3 world
 
+Fast Tx Service
+To build the repo:
+
+```
+yarn install && yarn build
+```
+
+API
+Get new Safe Wallet
+```
+```
+Create new transfer
+
+
+
+
+
+
+
+
+
 
