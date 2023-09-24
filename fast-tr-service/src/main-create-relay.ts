@@ -22,7 +22,10 @@ const safeAddress = '0xE0438Ec42A8dc719B5dd12290793bD7E85510824';
 // Config.safeAddress;
 
 // Any address can be used for destination. In this example, we use vitalik.eth
-const destinationAddress = '0xe7b76A0f3Ee2319795829b3e60268400Af22182b'
+  // SAFE : 0xE0438Ec42A8dc719B5dd12290793bD7E85510824
+  // SAFE : 0x3AC05161b76a35c1c28dC99Aa01BEd7B24cEA3bf
+  // EOA : 0xe7b76A0f3Ee2319795829b3e60268400Af22182b
+const destinationAddress = '0x3AC05161b76a35c1c28dC99Aa01BEd7B24cEA3bf'
 const withdrawAmount = ethers.utils.parseUnits('0.00001', 'ether').toString()
 
 // Create a transaction object
