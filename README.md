@@ -27,11 +27,37 @@ To build the repo:
 yarn install && yarn build
 ```
 
+To start the server:
+```
+yarn start
+```
+
+To deploy to vercel push/main the latest code to main, the server is deployed to 
+http://fast-eth-nyc-v1-b44bddxw3-swinecoder101.vercel.app
+
 API
-Get new Safe Wallet
+To get new Safe Wallet for a user
 ```
+GET /fast/wallet
 ```
-Create new transfer
+To check if a wallet exists
+```
+GET /fast/wallet/{address}
+```
+Create a new transfer between users
+```
+PUT /fast/transfer , body: { 
+    "asset":"", 
+    "quantity":"0.0001", 
+    "from":"0xE0438Ec42A8dc719B5dd12290793bD7E85510824", 
+    "to":"0x3AC05161b76a35c1c28dC99Aa01BEd7B24cEA3bf"
+}
+```
+
+The Safe Gelato 1 Balance is used to fund transactions, the bot currently runs between Goerli/Polygon Mumbai/ Metamask Linea
+
+
+
 
 
 
