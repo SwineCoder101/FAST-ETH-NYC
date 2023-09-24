@@ -1,7 +1,7 @@
 import boto3
 
 client = boto3.client('rekognition',
-aws_access_key_id='AKIAYCQ3PQ2LJMGFMHUN',aws_secret_access_key='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',region_name='us-east-1')
+aws_access_key_id='',aws_secret_access_key='B',region_name='us-east-1')
 
 
 imageSource=open('/Users/adargan/Documents/selfie2.jpg','rb')
